@@ -7,7 +7,7 @@ import           Data.Set (Set)
 import qualified Data.Set as Set hiding (Set)
 import           Data.List
 import           Test.Hspec
-
+import           Assert
 
 data Cmd = 
     Add Int
@@ -83,5 +83,5 @@ test = hspec $ do
 run :: IO ()
 run = do
   input <- readFile "input/Day01.txt"
-  putStrLn $ show $ runStr input
-  putStrLn $ show $ findDupFreq input
+  putStrLn $ assert (runStr input) 500
+  putStrLn $ assert (findDupFreq input) (Just 709)

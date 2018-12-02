@@ -6,6 +6,7 @@ module Day02
 import           Data.Map (Map)
 import qualified Data.Map as Map hiding (Map)
 import           Test.Hspec
+import           Assert
 
 logChar :: Char -> Map Char Int -> Map Char Int
 logChar c m = case (Map.lookup c m) of
@@ -99,5 +100,5 @@ test = hspec $ do
 run :: IO ()
 run = do
   input <- readFile "input/Day02.txt"
-  putStrLn $ show $ checksum input
-  putStrLn $ show $ oneOff input
+  putStrLn $ assert (checksum input) 5000
+  putStrLn $ assert (oneOff input) (Just "ymdrchgpvwfloluktajxijsqb")
