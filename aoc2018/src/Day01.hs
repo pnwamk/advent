@@ -3,7 +3,7 @@ module Day01
   , run
   ) where
 
-import           Data.Set as Set (Set)
+import           Data.Set (Set)
 import qualified Data.Set as Set hiding (Set)
 import           Data.List
 import           Test.Hspec
@@ -57,6 +57,8 @@ findDupFreq input = findDup $ logCmds $ cs
 test :: IO ()
 test = hspec $ do
   describe "Day 01 part 1 (resulting freq)" $ do
+  -- compute the result of adding/subtracting
+  -- the numbers in the sequence
     it "+1, +1, +1" $ do
       runStr "+1 +1 +1" `shouldBe` 3
     it "+1, +1, -2" $ do
@@ -64,6 +66,10 @@ test = hspec $ do
     it "-1, -2, -3" $ do
       runStr "-1 -2 -3" `shouldBe` -6
   describe "Day 01 part 2 (first repeated freq)" $ do
+  -- compute the results of adding/subtracting
+  -- the numbers at each step in the sequence and
+  -- record what frequency appears twice first,
+  -- repeating the cycle when necessary
     it "+1, -1" $ do
       findDupFreq "+1 -1" `shouldBe` (Just 0)
     it "+3, +3, +4, -2, -4" $ do
