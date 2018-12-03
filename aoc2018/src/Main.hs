@@ -2,6 +2,7 @@ module Main where
 
 import qualified Day01 as Day01
 import qualified Day02 as Day02
+import qualified Day03 as Day03
 
 main :: IO ()
 main = do
@@ -13,3 +14,7 @@ main = do
   putStrLn "Day02"
   Day02.test
   Day02.run
+  -- Day 2
+  putStrLn "Day03"
+  Day03.test
+  Day03.run

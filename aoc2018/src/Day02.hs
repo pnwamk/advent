@@ -84,7 +84,6 @@ test = hspec $ do
               , "abcdee"
               , "ababab"]
         `shouldBe` (4,3)
-
   describe "Day 02 part 2 (find one off)" $ do
     it "one off \"fgij\"" $ do
      findOneOff [ "abcde"
