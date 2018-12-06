@@ -61,7 +61,12 @@ parseEvents input = shifts
         go ((Sleep t1):(Wake t2):es) n t s = (go es n t ((t1,t2):s))
         go _ _ _ es = error $ "invalid event list: " ++ (show es)
 
-        
+-- Reports which guard slept the most and
+-- what minute that guard most slept
+sleepiest :: [Shift] -> (Int,Int)
+sleepiest ss = (42,42)
+  
+           
 -- Counts how many square inches have more than one
 -- claim which inhabits them.
 -- overlap :: [Claim] -> Int
