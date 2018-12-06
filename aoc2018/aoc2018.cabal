@@ -20,3 +20,8 @@ executable aoc2018
   build-depends:       base >= 4.7 && < 5
                      , containers
                      , hspec
+  other-modules: Assert
+               , Day01
+               , Day02
+               , Day03
+               , Day04
