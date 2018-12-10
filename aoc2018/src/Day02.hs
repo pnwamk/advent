@@ -6,7 +6,7 @@ module Day02
 import           Data.Map (Map)
 import qualified Data.Map as Map hiding (Map)
 import           Test.Hspec
-import           Assert
+import           Misc
 
 logChar :: Char -> Map Char Int -> Map Char Int
 logChar c m = case (Map.lookup c m) of

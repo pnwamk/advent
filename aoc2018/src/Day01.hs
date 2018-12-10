@@ -7,7 +7,7 @@ import           Data.Set (Set)
 import qualified Data.Set as Set hiding (Set)
 import           Data.List
 import           Test.Hspec
-import           Assert
+import           Misc
 
 data Cmd = 
     Add Int

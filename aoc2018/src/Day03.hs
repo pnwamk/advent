@@ -7,7 +7,7 @@ import           Data.List as List
 import           Data.Set (Set)
 import qualified Data.Set as Set hiding (Set)
 import           Test.Hspec
-import           Assert
+import           Misc
 
 
 data Claim = Claim

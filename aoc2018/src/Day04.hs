@@ -7,7 +7,7 @@ import           Data.List as List
 import           Data.Set (Set)
 import qualified Data.Set as Set hiding (Set)
 import           Test.Hspec
-import           Assert
+import           Misc
 
 class Time a where
    time :: a -> Int
@@ -64,16 +64,6 @@ parseEvents input = shifts
           where t1' = t1 `mod` 100
                 t2' = t2 `mod` 100
         go _ _ _ es = error $ "invalid event list: " ++ (show es)
-
-argMax :: Ord b => (a -> b) -> [a] -> a
-argMax f [] = error "argMax given empty list"
-argMax f (x:xs) = go x (f x) xs
-  where go y yVal [] = y
-        go y yVal (z:zs) =
-          let zVal = f z in
-            if yVal < zVal
-            then go z zVal zs
-            else go y yVal zs
   
 
 -- Reports which guard slept the most
