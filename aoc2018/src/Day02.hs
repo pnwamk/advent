@@ -99,5 +99,5 @@ test = hspec $ do
 run :: IO ()
 run = do
   input <- readFile "input/Day02.txt"
-  putStrLn $ assert (checksum input) 5000
-  putStrLn $ assert (oneOff input) (Just "ymdrchgpvwfloluktajxijsqb")
+  assert (checksum input) 5000
+  assert (oneOff input) (Just "ymdrchgpvwfloluktajxijsqb")

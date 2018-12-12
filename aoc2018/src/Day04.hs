@@ -70,7 +70,7 @@ parseEvents input = shifts
 sleepiest :: [Shift] -> Int
 sleepiest input = ident $ head $ snd $ argMax fst
                   $ map sumShifts
-                  $ groupBy (\s1 s2 -> (ident s1) == (ident s2))
+                  $ groupOn ident
                   $ sortOn ident input
   where sumShifts :: [Shift] -> (Int, [Shift])
         sumShifts ss = (total, ss)
@@ -169,5 +169,5 @@ test = hspec $ do
 run :: IO ()
 run = do
   input <- readFile "input/Day04.txt"
-  putStrLn $ assert (reportSleepy input) 119835
-  putStrLn $ assert (reportSameMinute input) 12725
+  assert (reportSleepy input) 119835
+  assert (reportSameMinute input) 12725

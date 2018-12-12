@@ -20,9 +20,12 @@ executable aoc2018
   build-depends:       base >= 4.7 && < 5
                      , containers
                      , hspec
+                     , deepseq
+  ghc-options: -O2
   other-modules: Misc
                , Day01
                , Day02
                , Day03
                , Day04
                , Day05
+               , Day06

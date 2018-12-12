@@ -83,5 +83,5 @@ test = hspec $ do
 run :: IO ()
 run = do
   input <- readFile "input/Day01.txt"
-  putStrLn $ assert (runStr input) 500
-  putStrLn $ assert (findDupFreq input) (Just 709)
+  assert (runStr input) 500
+  assert (findDupFreq input) (Just 709)

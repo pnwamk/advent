@@ -48,13 +48,11 @@ overlap cs = length
 -- Determines which claims do not overlap with any other
 -- claims, returning a list of their claimIDs.
 nonOverlap :: [Claim] -> [Int]
-nonOverlap cs = Set.toList
-                $ Set.difference (Set.fromList (map claimID cs))
-                $ Set.fromList
+nonOverlap cs = listDiff (map claimID cs)
                 $ map snd
                 $ concat
                 $ filter ((> 1) . length)
-                $ groupBy (\x y -> (fst x) == (fst y))
+                $ groupOn fst
                 $ List.sortOn fst
                 $ concatMap pointClaimPairs cs
   where pointClaimPairs c = map (\p -> (p, claimID c)) ps
@@ -85,5 +83,5 @@ test = hspec $ do
 run :: IO ()
 run = do
   input <- readFile "input/Day03.txt"
-  putStrLn $ assert (overlap (parseClaims input)) 103806
-  putStrLn $ assert (nonOverlap (parseClaims input)) [625]
+  assert (overlap (parseClaims input)) 103806
+  assert (nonOverlap (parseClaims input)) [625]

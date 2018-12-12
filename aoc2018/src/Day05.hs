@@ -65,5 +65,5 @@ run :: IO ()
 run = do
   rawInput <- readFile "input/Day05.txt"
   let input = head $ words rawInput
-  putStrLn $ assert (length (react input)) 10804
-  putStrLn $ assert (bestRemoveLen input) 6650
+  assert (length (react input)) 10804
+  assert (bestRemoveLen input) 6650
