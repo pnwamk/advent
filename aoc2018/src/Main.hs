@@ -6,6 +6,7 @@ import qualified Day03 as Day03
 import qualified Day04 as Day04
 import qualified Day05 as Day05
 import qualified Day06 as Day06
+import qualified Day07 as Day07
 
 main :: IO ()
 main = do
@@ -27,3 +28,6 @@ main = do
   -- Day 6
   putStrLn "Day06"
   Day06.run
+  -- Day 7
+  putStrLn "Day07"
+  Day07.run
